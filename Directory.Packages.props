@@ -1,0 +1,9 @@
+<Project>
+  <!-- Merkezi paket sürüm yönetimi. Yeni paket: PR'da gerekçe + lisans. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Paketler Dilim 0'da, lisansları ADR'de doğrulanarak eklenecek. -->
+  </ItemGroup>
+</Project>
