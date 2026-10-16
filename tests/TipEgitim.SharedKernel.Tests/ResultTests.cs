@@ -4,7 +4,7 @@ namespace TipEgitim.SharedKernel.Tests;
 
 public sealed class ResultTests
 {
-    private static readonly Error _sampleError = new("sample.error", "Örnek hata", ErrorType.Validation);
+    private static readonly ResultError _sampleError = new("sample.error", "Örnek hata", ErrorType.Validation);
 
     [Fact]
     public void SuccessHasNoError()

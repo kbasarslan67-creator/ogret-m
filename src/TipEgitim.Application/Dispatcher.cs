@@ -24,7 +24,7 @@ public sealed class Dispatcher(IServiceProvider services) : IDispatcher
     }
 
     private static Result<TResponse> HandlerMissing<TResponse>(Type requestType) =>
-        Result.Failure<TResponse>(new Error(
+        Result.Failure<TResponse>(new ResultError(
             "dispatcher.handler_missing",
             $"'{requestType.Name}' için işleyici kayıtlı değil.",
             ErrorType.Unexpected));

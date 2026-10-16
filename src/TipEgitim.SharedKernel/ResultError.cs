@@ -4,4 +4,4 @@ namespace TipEgitim.SharedKernel;
 /// <param name="Code">Kararlı, noktalı hata kodu (örn. "curriculum.year_frozen").</param>
 /// <param name="Message">Kullanıcıya gösterilebilir açıklama.</param>
 /// <param name="Type">Hata sınıfı.</param>
-public sealed record Error(string Code, string Message, ErrorType Type);
+public sealed record ResultError(string Code, string Message, ErrorType Type);
