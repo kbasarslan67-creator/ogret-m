@@ -1,0 +1,84 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    name: build-test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore TipEgitim.slnx 2>&1 | tee restore.log
+
+      - name: Build
+        run: dotnet build TipEgitim.slnx --no-restore --configuration Release 2>&1 | tee build.log
+
+      - name: Test
+        run: dotnet test TipEgitim.slnx --no-build --configuration Release 2>&1 | tee test.log
+
+      - name: Keep logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ matrix.os }}
+          path: "*.log"
+          if-no-files-found: ignore
+
+  report:
+    name: ci-report
+    needs: build-test
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: logs
+          pattern: logs-*
+
+      - name: Publish short report to ci-report branch
+        run: |
+          set -euo pipefail
+          {
+            echo "run: ${GITHUB_RUN_ID}  sha: ${GITHUB_SHA}  job-result: ${{ needs.build-test.result }}"
+            for d in logs/*/; do
+              echo
+              echo "## ${d}"
+              for f in "${d}"*.log; do
+                [ -f "$f" ] || continue
+                echo "### ${f}"
+                grep -E "error |warning |Failed|Passed!|Failed!|Skipped|Build succeeded|Time Elapsed|NU[0-9]{4}" "$f" | sort -u | head -150 || true
+              done
+            done
+          } > /tmp/report.md
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout --orphan ci-report
+          git rm -rf --quiet .
+          cp /tmp/report.md report.md
+          git add report.md
+          git commit --quiet -m "ci report for ${GITHUB_SHA}"
+          git push --force origin ci-report

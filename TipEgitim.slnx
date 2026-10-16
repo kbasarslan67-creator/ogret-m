@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TipEgitim.SharedKernel/TipEgitim.SharedKernel.csproj" />
+    <Project Path="src/TipEgitim.Application/TipEgitim.Application.csproj" />
+    <Project Path="src/TipEgitim.Infrastructure/TipEgitim.Infrastructure.csproj" />
+    <Project Path="src/TipEgitim.Web/TipEgitim.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TipEgitim.ArchitectureTests/TipEgitim.ArchitectureTests.csproj" />
+    <Project Path="tests/TipEgitim.SharedKernel.Tests/TipEgitim.SharedKernel.Tests.csproj" />
+    <Project Path="tests/TipEgitim.Application.Tests/TipEgitim.Application.Tests.csproj" />
+  </Folder>
+</Solution>

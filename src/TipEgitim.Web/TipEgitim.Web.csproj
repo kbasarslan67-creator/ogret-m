@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>TipEgitim.Web</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TipEgitim.Application\TipEgitim.Application.csproj" />
+    <ProjectReference Include="..\TipEgitim.Infrastructure\TipEgitim.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

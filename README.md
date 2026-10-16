@@ -17,4 +17,4 @@ Tıp fakülteleri için kurum içi (on-prem) müfredat, UÇEP, belirtke, soru ba
 Her dilim: gereksinim onayı → kabul senaryoları → kod ve test → CI → Gemini incelemesi → ekranda deneme → birleştirme.
 
 ## Durum
-Dilim 0 (Temel) başlamadı.
+Dilim 0 (Temel) sürüyor: iskelet, çekirdek, mimari testler ve CI. Kararlar: `docs/adr/`.

@@ -13,7 +13,6 @@
     <Deterministic>true</Deterministic>
     <!-- tr-TR kültürü gerekli olduğu için değişmez küreselleştirme kapalı -->
     <InvariantGlobalization>false</InvariantGlobalization>
-    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
   <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Contracts'))">
     <NoWarn>$(NoWarn.Replace('CS1591', ''))</NoWarn>
