@@ -1,4 +1,3 @@
-using TipEgitim.SharedKernel;
 
 namespace TipEgitim.SharedKernel.Tests;
 

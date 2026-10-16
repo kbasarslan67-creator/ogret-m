@@ -1,4 +1,3 @@
-using TipEgitim.Application;
 using TipEgitim.SharedKernel;
 
 namespace TipEgitim.Application.Tests;
