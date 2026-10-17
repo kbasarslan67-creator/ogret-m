@@ -4,7 +4,9 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <!-- Yalnızca test araçları. Hepsi açık kaynak (MIT/Apache-2.0). Üretim paketi yok. -->
+    <!-- Üretim: Windows Hizmeti barındırma (MIT). Gerekçe: ADR-002 (Windows Server kurulumu). -->
+    <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="10.0.13" />
+    <!-- Test araçları. Hepsi açık kaynak (MIT/Apache-2.0). -->
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.0" />

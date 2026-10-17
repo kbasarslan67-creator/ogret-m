@@ -7,4 +7,7 @@
     <ProjectReference Include="..\TipEgitim.Application\TipEgitim.Application.csproj" />
     <ProjectReference Include="..\TipEgitim.Infrastructure\TipEgitim.Infrastructure.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" />
+  </ItemGroup>
 </Project>

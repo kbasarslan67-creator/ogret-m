@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using TipEgitim.Application.Auditing;
 
 namespace TipEgitim.Infrastructure;
 
@@ -10,6 +11,7 @@ public static class ServiceCollectionExtensions
         ArgumentNullException.ThrowIfNull(services);
 
         services.AddSingleton(TimeProvider.System);
+        services.AddSingleton<IAuditLog, InMemoryAuditLog>();
         return services;
     }
 }
