@@ -14,3 +14,6 @@ Proje belgeleri Claude Docs dokümanıdır (claude.ai hesabında). Yerel kopya i
 
 ## ADR numaraları (Dilim 0 sonrası eşleme)
 Dilim Kataloğu'ndaki eski numaralar depodakilerle çakışır; geçerli eşleme: ADR-001 mimari, 002 sürümler, 003 arayüz, 004 Windows hizmeti, 005 SQLite, 006 Kimlik (Dilim 1), 007 Excel kütüphanesi (Dilim 8), 008 MSI aracı (Dilim 9). Ayrıntı: `DILIM-0-BULGULAR-KARAR.md` Bulgu 9.
+
+## Nihai Fonksiyon Listesi (6. belge)
+Claude Docs "Nihai Fonksiyon Listesi" (UÇEP/KEYPS/TEPDAD araştırması, 8 onaylı karar): https://claude.ai/code/artifact/7c39c9a3-ba84-4929-8389-dcfb2d4d85b6 . Yerel özet ve dilim eşlemesi: `docs/FONKSIYON-LISTESI-ESLEME.md`.

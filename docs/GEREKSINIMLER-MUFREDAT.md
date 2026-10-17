@@ -33,7 +33,7 @@ Program → Müfredat sürümü (akademik yıl) → Dönem → Eğitim birimi (d
 | K9 | Bir kişi ancak atandığı dersin hedefini yazar | "Eğitici yalnızca kendi dersini görür" |
 | K10 | Ders başına planlanan saat ve yöntem (teorik, pratik, klinik) isteğe bağlıdır; takvimdeki gerçekleşenle farkı raporlanır | Raporlarda saat ağırlığı eksik |
 | K11 | Eski yıl verisi içeri alınırken çelişkili düzey kodları ("T-TT" gibi) uyarı olarak listelenir | Örnek veride 6 kez geçiyor |
-| K12 | Yapı değişiklikleri kim, ne, ne zaman ve gerekçe ile kaydedilir | MÖTE TS.5.2 izlenebilirlik |
+| K12 | Yapı değişiklikleri kim, ne, ne zaman ve gerekçe ile kaydedilir | TEPDAD 2025 standart 6.3 (denetim izi ve belge arşivi); eski kod MÖTE TS.5.2 |
 
 Diğer kurallar (belgenin gövdesinden):
 - Yayındaki yılda birim/ders/hedef ekleme-kaldırma-taşıma: gerekçeli ve denetim kayıtlı düzeltme; silme yerine pasifleştirme. Yazım düzeltmesi: gerekçe + denetim kaydı. Eğitici ataması serbestçe değişir (yapı değil görevlendirme). UÇEP/program çıktısı eşlemesi ayrı onayla güncellenir, geçmişi tutulur.
@@ -46,6 +46,8 @@ Diğer kurallar (belgenin gövdesinden):
 ## 3. Kararlar (16 Ekim 2026)
 Kabul (önerim): 1 eşleme hem hedef hem ders düzeyi (ders düzeyi "eksik ayrıntı" görünür); 5 hedefi öğretim üyesi yazar, birim sorumlusu onaylar; 6 planlanan saat modülde tutulur, takvim farkı uyarı; 7 program çıktıları müfredattan bağımsız ayrı sürümlü liste; 8 öğrenciler yayınlanmış hedefleri görür.
 Diğerleri: Dönem VI ilk sürümde yok; yayındaki yılda revizyon değil gerekçeli+denetim kayıtlı düzeltme; onay iki basamaklı; ilk sürüm tek program (veri modeli çoklu programa açık); soru 10 (veri taşıma hizmeti mi şablon mu) AÇIK.
+
+Güncelleme (17 Ekim 2026, Nihai Fonksiyon Listesi kararları, ayrıntı `FONKSIYON-LISTESI-ESLEME.md`): birim kazanımları K1…Kn ve ders hedefleri birlikte tutulur, ders hedefleri birim kazanımlarına bağlanır; ders × program çıktısı ilişkisi 0–5 güçle tutulur; hedef yazım denetimi K8'i genişletir (ders başına 5–7 hedef, ölçülebilir fiil, Bloom düzeyi, yöntem ve süre doluluğu; uyarı, engel değil); UÇEP eşlemesinde yapay zekâ önerisi 2. sürümde (öneri kaydedilmez, insan karar verir).
 
 ## 4. Onaylı roller ve kapsam
 Yetki = rol (ne yapılabilir) + kapsam (nerede). Bir kişi birden çok rol taşıyabilir. Rol adları ekranda yapılandırılabilir.
