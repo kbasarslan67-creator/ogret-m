@@ -5,6 +5,7 @@
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Data.Sqlite" />
     <ProjectReference Include="..\TipEgitim.Application\TipEgitim.Application.csproj" />
   </ItemGroup>
 </Project>

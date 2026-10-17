@@ -6,6 +6,8 @@
   <ItemGroup>
     <!-- Üretim: Windows Hizmeti barındırma (MIT). Gerekçe: ADR-002 (Windows Server kurulumu). -->
     <PackageVersion Include="Microsoft.Extensions.Hosting.WindowsServices" Version="10.0.13" />
+    <!-- Veritabanı: SQLite (MIT, Microsoft). Gerekçe: ADR-005. Sürüm çalışma zamanıyla aynı hat (10.0.13). -->
+    <PackageVersion Include="Microsoft.Data.Sqlite" Version="10.0.13" />
     <!-- Test araçları. Hepsi açık kaynak (MIT/Apache-2.0). -->
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="xunit" Version="2.9.3" />

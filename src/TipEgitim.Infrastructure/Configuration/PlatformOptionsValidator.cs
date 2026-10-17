@@ -22,6 +22,11 @@ public sealed class PlatformOptionsValidator : IValidateOptions<PlatformOptions>
             failures.Add("Platform:DatabaseConnectionName zorunludur ve boş olamaz.");
         }
 
+        if (string.IsNullOrWhiteSpace(options.DatabasePath))
+        {
+            failures.Add("Platform:DatabasePath zorunludur ve boş olamaz.");
+        }
+
         return failures.Count == 0
             ? ValidateOptionsResult.Success
             : ValidateOptionsResult.Fail(failures);

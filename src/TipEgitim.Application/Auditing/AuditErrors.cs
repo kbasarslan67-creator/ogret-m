@@ -19,6 +19,12 @@ public static class AuditErrors
         "Denetim kaydı için işlem adı belirtilmelidir.",
         ErrorType.Validation);
 
+    /// <summary>Denetim kaydı depolamaya yazılamadı.</summary>
+    public static ResultError StorageFailed { get; } = new(
+        "audit.storage_failed",
+        "Denetim kaydı kaydedilemedi.",
+        ErrorType.Unexpected);
+
     /// <summary>Hedef türü boş veya yalnızca boşluk.</summary>
     public static ResultError TargetTypeRequired { get; } = new(
         "audit.target_type_required",

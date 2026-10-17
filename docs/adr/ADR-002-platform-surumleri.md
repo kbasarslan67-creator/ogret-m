@@ -2,6 +2,8 @@
 
 Durum: Kabul, doğrulama CI'da (16 Ekim 2026)
 
+Not: Veritabanı kararı ADR-005 ile SQLite olarak değiştirildi.
+
 ## Karar
 - .NET 10 (LTS), C# `latest`. SDK sürümü `global.json` ile sabitlenir.
 - Veritabanı: PostgreSQL. Hedef 17 ve üstü; kesin sürüm Dilim 1'de veri erişimi kurulurken CI'da gerçek bir PostgreSQL ile denenerek sabitlenir.

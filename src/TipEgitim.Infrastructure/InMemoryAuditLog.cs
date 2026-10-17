@@ -5,8 +5,8 @@ namespace TipEgitim.Infrastructure;
 
 /// <summary>
 /// Bellek içi, iş parçacığı güvenli ve yalnızca ekleme yapılabilen denetim günlüğü.
-/// Kalıcı PostgreSQL depolaması sonraki dilimde gelecektir; bu sınıf o zamana kadar geçici uygulamadır
-/// ve uygulama yeniden başlatıldığında kayıtlar kaybolur.
+/// Yalnızca testlerde kullanılır; üretimde kayıtlar <see cref="Persistence.SqliteAuditLog"/> ile kalıcıdır
+/// ve bu sınıf DI'a kaydedilmez.
 /// </summary>
 public sealed class InMemoryAuditLog : IAuditLog
 {

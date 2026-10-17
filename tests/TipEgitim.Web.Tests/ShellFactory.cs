@@ -18,6 +18,7 @@ public sealed class ShellFactory : WebApplicationFactory<Program>
             {
                 ["Platform:InstitutionName"] = InstitutionName,
                 ["Platform:DatabaseConnectionName"] = "TestDb",
+                ["Platform:DatabasePath"] = Path.Combine(Path.GetTempPath(), "tipegitim-webtests.db"),
                 ["Platform:DefaultCulture"] = "tr-TR",
             });
         });

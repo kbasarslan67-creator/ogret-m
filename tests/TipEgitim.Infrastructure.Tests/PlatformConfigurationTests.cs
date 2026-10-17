@@ -52,6 +52,22 @@ public sealed class PlatformConfigurationTests
         Assert.Equal("tr-TR", options.DefaultCulture);
     }
 
+    [Fact]
+    public void S_CFG_04_BlankDatabasePathFailsValidationWithMessage()
+    {
+        var provider = BuildProvider(new Dictionary<string, string?>
+        {
+            ["Platform:InstitutionName"] = "Test Tıp Fakültesi",
+            ["Platform:DatabaseConnectionName"] = "TestDb",
+            ["Platform:DatabasePath"] = "   ",
+        });
+
+        var exception = Assert.Throws<OptionsValidationException>(
+            () => provider.GetRequiredService<IOptions<PlatformOptions>>().Value);
+
+        Assert.Contains("DatabasePath", exception.Message, StringComparison.Ordinal);
+    }
+
     private static ServiceProvider BuildProvider(Dictionary<string, string?> values)
     {
         var configuration = new ConfigurationBuilder()

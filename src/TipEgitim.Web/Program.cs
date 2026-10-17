@@ -10,8 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Windows Hizmeti olarak çalışır; konsol uygulaması olarak çalıştırıldığında (ör. Linux) etkisizdir.
 builder.Host.UseWindowsService(options => options.ServiceName = "TipEgitimPlatformu");
 
-builder.Services.AddPlatformConfiguration(builder.Configuration);
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddScoped<IDispatcher, Dispatcher>();
 builder.Services.AddHealthChecks();
 builder.Services.AddRazorPages();
