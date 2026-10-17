@@ -11,3 +11,6 @@ Proje belgeleri Claude Docs dokümanıdır (claude.ai hesabında). Yerel kopya i
 | C# kodlama standardı | https://claude.ai/code/artifact/5a8ecc91-e1b3-4421-9787-b84eac3cf220 |
 
 Örnek arayüz (AkademikAI, yalnızca ekran/akış referansı): `knowledge/index.html`.
+
+## ADR numaraları (Dilim 0 sonrası eşleme)
+Dilim Kataloğu'ndaki eski numaralar depodakilerle çakışır; geçerli eşleme: ADR-001 mimari, 002 sürümler, 003 arayüz, 004 Windows hizmeti, 005 SQLite, 006 Kimlik (Dilim 1), 007 Excel kütüphanesi (Dilim 8), 008 MSI aracı (Dilim 9). Ayrıntı: `DILIM-0-BULGULAR-KARAR.md` Bulgu 9.
