@@ -1,0 +1,196 @@
+/* Tıp Eğitimi Platformu arayüz kabuğu. Renkler tek yerde tanımlanır; tüm metin/zemin çiftleri WCAG 2.1 AA (>= 4.5:1) hedefler. */
+:root {
+    --color-bg: #f4f6fa;
+    --color-surface: #ffffff;
+    --color-text: #1b2430;
+    --color-text-muted: #4a5568;
+    --color-heading: #14213d;
+    --color-link: #1e4f9c;
+    --color-border: #d5dce8;
+    --color-sidebar: #14213d;
+    --color-sidebar-text: #e6ebf5;
+    --color-sidebar-active: #243a66;
+    --color-focus-light: #b45309;
+    --color-focus-dark: #fbbf24;
+    --color-skip-bg: #14213d;
+    --color-skip-text: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Klavye odağı: her etkileşimli öğede görünür halka. */
+a:focus-visible,
+main:focus-visible {
+    outline: 3px solid var(--color-focus-light);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    z-index: 10;
+    padding: 0.5rem 1rem;
+    background: var(--color-skip-bg);
+    color: var(--color-skip-text);
+    border-radius: 4px;
+    text-decoration: none;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.75rem 1rem;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 700;
+    color: var(--color-heading);
+    font-size: 1.1rem;
+}
+
+.app-body {
+    flex: 1;
+    display: flex;
+    min-width: 0;
+}
+
+.sidebar {
+    flex: 0 0 240px;
+    background: var(--color-sidebar);
+    color: var(--color-sidebar-text);
+    padding: 1rem 0;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    color: var(--color-sidebar-text);
+    text-decoration: none;
+    border-left: 4px solid transparent;
+}
+
+.menu-link:hover {
+    background: var(--color-sidebar-active);
+    text-decoration: underline;
+}
+
+.menu-link[aria-current="page"] {
+    background: var(--color-sidebar-active);
+    border-left-color: var(--color-focus-dark);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar a:focus-visible {
+    outline-color: var(--color-focus-dark);
+}
+
+.content {
+    flex: 1;
+    min-width: 0;
+    padding: 2rem;
+}
+
+.home h1 {
+    margin: 0.25rem 0 0.75rem;
+    color: var(--color-heading);
+    font-size: 1.75rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.85rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+}
+
+.notice {
+    margin: 1rem 0 0;
+    padding: 0.75rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-text-muted);
+}
+
+/* Dar ekran: menü üstte yatay satırlara döner; sayfada yatay kaydırma oluşmaz. */
+@media (max-width: 768px) {
+    .app-body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: none;
+        padding: 0.5rem 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu-link {
+        padding: 0.5rem 0.9rem;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .menu-link[aria-current="page"] {
+        border-left-color: transparent;
+        border-bottom-color: var(--color-focus-dark);
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skip-link {
+        transition: none;
+    }
+}

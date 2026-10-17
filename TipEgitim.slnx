@@ -10,5 +10,6 @@
     <Project Path="tests/TipEgitim.SharedKernel.Tests/TipEgitim.SharedKernel.Tests.csproj" />
     <Project Path="tests/TipEgitim.Application.Tests/TipEgitim.Application.Tests.csproj" />
     <Project Path="tests/TipEgitim.Infrastructure.Tests/TipEgitim.Infrastructure.Tests.csproj" />
+    <Project Path="tests/TipEgitim.Web.Tests/TipEgitim.Web.Tests.csproj" />
   </Folder>
 </Solution>

@@ -11,5 +11,7 @@
     <PackageVersion Include="xunit" Version="2.9.3" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.0" />
     <PackageVersion Include="NetArchTest.Rules" Version="1.3.2" />
+    <!-- Web testleri: WebApplicationFactory (MIT, Microsoft ASP.NET Core). Sürüm çalışma zamanıyla aynı hat (10.0.13). -->
+    <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.13" />
   </ItemGroup>
 </Project>

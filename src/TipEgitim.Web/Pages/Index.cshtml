@@ -1,0 +1,12 @@
+@page
+@model TipEgitim.Web.Pages.IndexModel
+@{
+    ViewData["Title"] = UiStrings.HomeTitle;
+}
+
+<section class="home" aria-labelledby="home-heading">
+    <p class="eyebrow">@UiStrings.AppName</p>
+    <h1 id="home-heading">@Model.InstitutionName</h1>
+    <p class="lead">@UiStrings.HomeLead</p>
+    <p class="notice">@UiStrings.HomeShellNotice</p>
+</section>

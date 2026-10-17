@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] | @UiStrings.AppName</title>
+    <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+    <a class="skip-link" href="#main-content">@UiStrings.SkipToContent</a>
+
+    <div class="app-shell">
+        <header class="app-header">
+            <p class="brand">@UiStrings.AppName</p>
+        </header>
+
+        <div class="app-body">
+            <nav class="sidebar" aria-label="@UiStrings.MainNavigationLabel">
+                <ul class="menu">
+                    @foreach (var item in MainMenu.ForPath(Context.Request.Path))
+                    {
+                        <li>
+                            <a class="menu-link" href="@item.Href" aria-current="@(item.IsCurrent ? "page" : null)">@item.Label</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+            <main id="main-content" class="content" tabindex="-1">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- htmx 2.0.4 (0BSD), yerel dosya; kaynak ve lisans: wwwroot/js/htmx.LICENSE.txt. CDN kullanılmaz (ADR-003). -->
+    <script src="/js/htmx.min.js" defer></script>
+</body>
+</html>
